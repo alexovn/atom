@@ -9,6 +9,7 @@ import styles from "./styles";
 import vendorStyles from "./styles";
 import images from "./images";
 import sprites from "./sprites";
+import listPages from "./listPages";
 
 
 const browserSync = require("browser-sync").create();
@@ -30,6 +31,7 @@ function server() {
     gulp.watch([path.watch.images], images.images);
     gulp.watch([path.watch.vendorStyles], vendorStyles.vendorStyles);
     gulp.watch([path.watch.sprites], sprites.sprites);
+    gulp.watch([path.watch.pageList], listPages.listPages).on("change", reload);
 }
 
 exports.server = server;

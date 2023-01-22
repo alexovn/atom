@@ -1,0 +1,12 @@
+ProjectTitle: Project
+color: ECBCC1
+
+PageList:
+
+- file: index.html
+  desc: Index
+  ready: 10
+
+- file: page.html
+  desc: Page
+  ready: 10

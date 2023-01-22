@@ -30,6 +30,7 @@ const path = {
         sprites:    distPath + "assets/images/sprite/",
     },
     src: {
+        root:           srcPath,
         html:           [srcPath + "views/**/*.html", "!" + srcPath + "/views/**/_*.html"],
         scripts:         srcPath + "assets/js/**/*.js",
         styles:         [srcPath + "assets/styles/*.scss", "!" + srcPath + "assets/styles/libs/**/*.{scss,css}"],
@@ -38,7 +39,8 @@ const path = {
         vendorStyles:    srcPath + "assets/styles/libs/*.scss",
         favicons:        srcPath + "assets/images/favicon/*.{jpg,jpeg,png,gif}",
         sprites:         srcPath + "assets/images/sprite/**/*.svg",
-        spritesStylesGen:srcPath + "assets/styles/main/dev/generated"
+        spritesStylesGen:srcPath + "assets/styles/main/dev/generated",
+        pageList:        srcPath + "index.yaml"
     },
     watch: {
         html:         srcPath + "**/*.html",
@@ -47,6 +49,7 @@ const path = {
         images:       srcPath + "assets/images/**/*.{jpg,jpeg,png,svg,gif,ico,webp}",
         vendorStyles: srcPath + "assets/styles/libs/*.scss",
         sprites:      srcPath + "assets/images/sprite/**/*.svg",
+        pageList:     srcPath + "index.yaml"
     },
     clean: "./" + distPath
 };
@@ -65,21 +68,23 @@ import fontsBundle from "./gulp-tasks/fonts";
 import favicon from "./gulp-tasks/favicons";
 import scripts from "./gulp-tasks/scripts";
 import images from "./gulp-tasks/images";
-import server from './gulp-tasks/server';
-import clean from './gulp-tasks/clean';
-import hashes from './gulp-tasks/hashes';
-import sprites from './gulp-tasks/sprites';
+import server from "./gulp-tasks/server";
+import clean from "./gulp-tasks/clean";
+import hashes from "./gulp-tasks/hashes";
+import sprites from "./gulp-tasks/sprites";
+import listPages from "./gulp-tasks/listPages";
 
 const prod = gulp.series(
     clean.clean,
     fontsBundle.fontsBundle,
+    listPages.listPages,
     gulp.parallel(
         html.html, 
         stylesBundle.stylesBundle,
         scripts.scripts,
         images.images,
         favicon.favicon,
-        sprites.sprites
+        sprites.sprites,
     ), 
     hashes.hashes
 );
@@ -88,6 +93,7 @@ const dev = gulp.parallel(
     gulp.series(
         clean.clean,
         fontsBundle.fontsBundle,
+        listPages.listPages,
         gulp.parallel(
             html.html,
             stylesBundle.stylesBundle,
