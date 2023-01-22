@@ -87,40 +87,4 @@ function sprites() {
         .pipe(browserSync.stream())
 }
 
-//-------- NEW method, but need review before to go -----------
-
-// function sprites() {
-//     return src(path.src.sprites)
-//         .pipe(plumber())
-//         .pipe(svgSprite({
-//             mode: {
-//                 symbol: {
-//                     sprite: "../sprite.svg",
-//                 }
-//             },
-//             shape: {
-//                 id: {
-//                     generator: "icon-%s"
-//                 },
-//                 transform:[
-//                     {
-//                         svgo: {
-//                             plugins: [
-//                                 {
-//                                     removeAttrs: {
-//                                         attrs: ['class', 'data-name', 'fill', 'stroke.*'],
-//                                     },
-//                                 },
-//                             ],
-//                         },
-//                     },
-//                 ],
-//             },
-//         }))
-//         .pipe(dest(path.build.sprites))
-//         .pipe(browserSync.stream())
-// }
-
-//-------- NEW method, but need review before to go -----------
-
 exports.sprites = sprites;

@@ -1,3 +1,4 @@
+{% import "partials/_components.html" as component %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
     <title>{{title}}</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    {% block styles %}
-    {% endblock %}
+    <link rel="stylesheet" href="./assets/styles/vendor.bundle.min.css">
+    <link rel="stylesheet" href="./assets/styles/styles.min.css">
     {% include "../partials/_favicon.html" %}
 </head>
 <body>
@@ -25,10 +26,9 @@
     <!-- END content -->
 
     <!-- BEGIN scripts -->
-    {% block js %}
-    {% endblock %}
+    {# <script src="./assets/js/vendor.bundle.min.js"></script> #}
+    <script src="./assets/js/main.bundle.min.js"></script>
     <!-- END scripts -->
 
 </body>
 </html>
-{% import "../partials/_components.html" as component %}

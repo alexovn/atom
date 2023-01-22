@@ -1,24 +1,22 @@
-//Primary style=================================
+:root {
+    font-size: calc(100vw / 1920 * 10);
+    @include r(1440) {
+        font-size: calc(100vw / 1440 * 10);
+    }
+}
+
 body {
     min-height: 100%;
-    
-    color: #000;
-    font-family: $fontFamily;
+    font-size: 1.6rem;
+    font-family: $primaryFont;
     font-weight: 400;
-    font-size: 14px;
+    color: #000;
 }
 
 footer {
     flex-shrink: 0;
 }
-//Primary style=================================
 
-//Modules=======================================
-
-
-//Modules=======================================
-
-//Wrapper=======================================
 .wrapper {
     width: 100%;
     min-height: 100%;
@@ -26,27 +24,13 @@ footer {
     display: flex;
     flex-direction: column;
 }
-//Wrapper=======================================
 
-//Main Block===================================
 .page {
     flex: 1 0 auto;
 }
-//Main Block===================================
 
-//Main Grid==================================
 .container {
-    max-width: $maxWidthContainer + px;
+    max-width: 192rem;
     margin: 0 auto;
-    @media (max-width: $md1+px) {
-		max-width: 970px;
-	}
-	@media (max-width: $md2+px) {
-		max-width: 750px;
-	}
-	@media (max-width: $md3+px) {
-		max-width: none;
-		padding: 0 10px;
-	}
+    padding: 0 1.5rem;
 }
-//Mian Grid==================================

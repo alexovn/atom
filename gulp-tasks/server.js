@@ -10,7 +10,9 @@ import vendorStyles from "./styles";
 import images from "./images";
 import sprites from "./sprites";
 
+
 const browserSync = require("browser-sync").create();
+const reload = browserSync.reload;
 
 function server() {
     browserSync.init({
@@ -19,10 +21,10 @@ function server() {
         },
         notify: false,
         open: false,
-        port: 5000,
+        port: 3000,
     });
 
-    gulp.watch([path.watch.html], html.html);
+    gulp.watch([path.watch.html], html.html).on("change", reload);
     gulp.watch([path.watch.styles], styles.styles);
     gulp.watch([path.watch.scripts], scripts.scripts);
     gulp.watch([path.watch.images], images.images);

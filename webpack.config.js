@@ -2,13 +2,13 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: "production",
-    // devtool: 'source-map',
+    devtool: 'source-map',
     optimization: {
         splitChunks: {
             cacheGroups: {
                 vendorJS: {
                     name: 'vendor',
-                    test: /[\\/]node_modules[\\/]|files[\\/]/,
+                    test: /[\\/]node_modules[\\/]|vendor[\\/]/,
                     chunks: 'all',
                     enforce: true,
                 },
@@ -33,10 +33,5 @@ module.exports = {
             },
         ]
     },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-        }),
-    ],
+    plugins: [],
 };

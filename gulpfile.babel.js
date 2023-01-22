@@ -27,7 +27,7 @@ const path = {
         images:     distPath + "assets/images/",
         fonts:      distPath + "assets/fonts/",
         favicons:   distPath + "assets/images/favicons/",
-        sprites:    distPath + "assets/images/sprites/",
+        sprites:    distPath + "assets/images/sprite/",
     },
     src: {
         html:           [srcPath + "views/**/*.html", "!" + srcPath + "/views/**/_*.html"],

@@ -1,4 +1,3 @@
-//Font mixin==========================
 @mixin font($font_name, $file_name, $weight, $style) {
     @font-face {
     font-family: $font_name;
@@ -8,4 +7,27 @@
     font-style: #{$style};
     }
 }
-//Font mixin==========================
+
+@mixin r($width) {
+    @media only screen and (max-width: $width+ "px") {
+      @content;
+    }
+}
+
+@mixin rmin($width) {
+    @media only screen and (min-width: ($width + 1) + "px") {
+      @content;
+    }
+}
+
+@mixin screen-reader {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

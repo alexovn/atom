@@ -1,9 +1,6 @@
-//Layout======================================
-@import "./layout/header";
-@import "./layout/footer";
-//Layout======================================
+// footer/header styles
+@import "./header";
+@import "./footer";
 
-//Blocks======================================
-@import "./blocks/block-1.scss";
-@import "./blocks/block-2.scss";
-//Blocks======================================
+// ui
+@import "./ui/button/buttonPrimary";

@@ -57,6 +57,7 @@ function vendorStyles() {
             extname: ".css"
         }))
         .pipe(dest(path.build.styles))
+        .pipe(browserSync.stream())
 }
 
 const stylesBundle = gulp.parallel(styles, vendorStyles);

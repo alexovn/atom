@@ -1,21 +1,15 @@
 {% extends "./layouts/_layout.html" %}
 {% set title = "Main" %}
-{% block styles %}
-    <link rel="stylesheet" href="./assets/css/vendor.bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.min.css">
-{% endblock %}
-{% block js %}
-    <script src="./assets/js/vendor.bundle.min.js"></script>
-    <script src="./assets/js/main.bundle.min.js"></script>
-{% endblock %}
 
 {% block content %}
 
-{# create some content here #}
-<a href="./pages/page.html">
+<a href="./page.html">
     I'm the link to Page
-    <img src="./assets/images/sprites/sprite.svg#twitter" alt="">
+    {{ component.icon('twitter') }}
 </a>
-{# create some content here #}
+
+<button class="btn-primary">
+    Click me
+</button>
 
 {% endblock %}
